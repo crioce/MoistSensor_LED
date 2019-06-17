@@ -72,14 +72,6 @@ void updateDisplay(float moistValue)
     strip.fill(colorDanger, 0, noDanger); 
   }
   
-
- Serial.println("---");
-  // Serial.println(humidPerPixel);
-  // Serial.println(pixelsLit);
- Serial.println(moistValue);
-  // Serial.println(millis());
-  // delay(500);
-  
   strip.show();
   lastPixelLit = pixelsLit;
 }
@@ -94,12 +86,7 @@ void updateMoist()
     sensorAverage = sensorSum / 100.0;
     moistCount = 0;
     sensorSum = 0;
-
     moisture_percentage = (sensorAverage / maxHumid) * 100.00 ;
-
-  // Serial.print("Soil Moisture(in Percentage) = ");
-// Serial.print(moisture_percentage);
-  // Serial.println("%");
   }
 }
 
@@ -107,7 +94,6 @@ void updateMoist()
 
 void loop()
 {
-
   updateMoist();
 
   if(loopCount >= displayUpdateInterval)
@@ -120,4 +106,4 @@ void loop()
 
 }
 
-// if sensorValue < 1000
+
